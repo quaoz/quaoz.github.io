@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <body onload="pageLoad()">
+    <script>
+      // array of libgen domains to check
+      var libgenDomains = [
+	      "https://libgen.lc/img/logo.png", 
+	      "https://libgen.li/img/logo.png",
+	      "https://libgen.gs/img/logo.png",
+	      "https://libgen.is/img/drop.png", 
+	      "https://libgen.rs/img/drop.png", 
+	      "https://libgen.st/img/drop.png", 
+	      "https://libgen.io/img/drop.png"
+      ];
+      
+      // function to check the status of a given domain
+      function checkDomainStatus(domain) {
+        // create an image object and set the source to the domain
+        var img = document.body.appendChild(document.createElement("img"));
+        
+        // if the image loads successfully, it means the domain is up
+        img.onload = function() {
+	  // redirect to domain
+          var url = new URL(domain);
+	  window.location.replace(url.protocol + "//" + url.host);
+        }
+	
+	img.src = domain;
+      }
+
+      // function to execute when the page loads
+      function pageLoad() {
+        // loop through the array of libgen domains
+        for (var i = 0; i < libgenDomains.length; i++) {
+          // check the status of the current domain
+          checkDomainStatus(libgenDomains[i]);
+        }
+      }
+    </script>
+    Libgen redirect...
+  </body>
+</html>
