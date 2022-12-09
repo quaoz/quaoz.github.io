@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <body onload="pageLoad()">
+    <script>
+      // array of scihub domains to check
+      var scihubDomains = [
+	      "https://sci-hub.se/pictures/protest.svg",
+	      "https://sci-hub.ru/pictures/protest.svg"
+	      "https://sci-hub.st/misc/img/quote.png",
+	      "https://sci.hubg.org/misc/img/raven.svg",
+	      "https://sci.hubbza.co.za/misc/img/raven.svg",
+        "https://sci-hub.it.nf/misc/img/quote.png",
+      ];
+      
+      // function to check the status of a given domain
+      function checkDomainStatus(domain) {
+        // create an image object and set the source to the domain
+        var img = document.body.appendChild(document.createElement("img"));
+        
+        // if the image loads successfully, it means the domain is up
+        img.onload = function() {
+	  // redirect to domain
+          var url = new URL(domain);
+	  window.location.replace(url.protocol + "//" + url.host);
+        }
+	
+	img.src = domain;
+      }
+
+      // function to execute when the page loads
+      function pageLoad() {
+        // loop through the array of scihub domains
+        for (var i = 0; i < scihubDomains.length; i++) {
+          // check the status of the current domain
+          checkDomainStatus(scihubDomains[i]);
+        }
+      }
+    </script>
+    Scihub redirect...
+  </body>
+</html>
