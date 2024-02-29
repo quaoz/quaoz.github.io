@@ -7,6 +7,8 @@
 	      "https://libgen.lc/img/logo.png", 
 	      "https://libgen.li/img/logo.png",
 	      "https://libgen.gs/img/logo.png",
+        "https://libgen.vg/img/logo.png",
+        "https://libgen.pm/img/logo.png",
 	      "https://libgen.is/img/drop.png", 
 	      "https://libgen.rs/img/drop.png", 
 	      "https://libgen.st/img/drop.png", 
@@ -20,12 +22,12 @@
         
         // if the image loads successfully, it means the domain is up
         img.onload = function() {
-	  // redirect to domain
+	        // redirect to domain
           var url = new URL(domain);
-	  window.location.replace(url.protocol + "//" + url.host);
+	        window.location.replace(url.protocol + "//" + url.host);
         }
 	
-	img.src = domain;
+	      img.src = domain;
       }
 
       // function to execute when the page loads
