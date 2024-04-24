@@ -1,8 +1,5 @@
-# My website
-Things will go here.
+things might go here one day
 
-### Redirectors
-Pages which redirect you to a working domain for various services.
-
+currently theres just a couple of pages that redirect you to a working mirror using awful js
 - [Libgen redirect](https://quaoz.github.io/libgen)
 - [Scihub redirect](https://quaoz.github.io/libgen)
